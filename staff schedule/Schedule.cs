@@ -74,22 +74,22 @@ namespace staff_schedule
         {
             connectionLabel.Text = "Идёт подключение к базе данных";
 
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ScheduleDB"].ConnectionString);
-            sqlConnection.Open();
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString); //Подключаем базу данных
+            sqlConnection.Open(); //Открываем подключение
 
             if (sqlConnection.State == ConnectionState.Open) connectionLabel.Text = "Подключение установлено";
             else connectionLabel.Text = "Подключение не установлено";
 
-            ShowGrid();
-            FillComboBox(unitComboBox, "Подразделение");
-            FillComboBox(postComboBox, "Должность");
+            ShowGrid(); //Выводим таблицу
+            FillComboBox(unitComboBox, "Подразделение"); //Заполняем comboBox информацией из базы данных
+            FillComboBox(postComboBox, "Должность"); //Заполняем comboBox информацией из базы данных
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e) //Кнопка добавления информации
         {
             SqlCommand command = new SqlCommand(
                 $"INSERT INTO [Schedule] (Подразделение, Должность, Дата, Количество) VALUES (N'{unitComboBox.Text}', N'{postComboBox.Text}', '{dateTimePicker.Value.ToString("MM/dd/yyyy")}', '{textBox.Text}')", sqlConnection);
-            stateLabel.Text = command.ExecuteNonQuery().ToString() + "строк обработано";
+            stateLabel.Text = "Строк обработано: " + command.ExecuteNonQuery().ToString();
 
             ShowGrid();
         }
