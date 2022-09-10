@@ -1,2 +1,0 @@
-﻿SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND Paycheck.Дата = Schedule.Дата 
-	
