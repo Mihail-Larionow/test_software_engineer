@@ -32,12 +32,12 @@
             this.stateLabel = new System.Windows.Forms.Label();
             this.connectionLabel = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
-            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // selectButton
@@ -80,20 +80,6 @@
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
             // 
-            // startDateTimePicker
-            // 
-            this.startDateTimePicker.Location = new System.Drawing.Point(12, 376);
-            this.startDateTimePicker.Name = "startDateTimePicker";
-            this.startDateTimePicker.Size = new System.Drawing.Size(165, 27);
-            this.startDateTimePicker.TabIndex = 4;
-            // 
-            // endDateTimePicker
-            // 
-            this.endDateTimePicker.Location = new System.Drawing.Point(183, 376);
-            this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(165, 27);
-            this.endDateTimePicker.TabIndex = 5;
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Должность";
@@ -114,6 +100,20 @@
             this.columnHeader4.Text = "ФОТ";
             this.columnHeader4.Width = 100;
             // 
+            // startDateTimePicker
+            // 
+            this.startDateTimePicker.Location = new System.Drawing.Point(12, 376);
+            this.startDateTimePicker.Name = "startDateTimePicker";
+            this.startDateTimePicker.Size = new System.Drawing.Size(165, 27);
+            this.startDateTimePicker.TabIndex = 4;
+            // 
+            // endDateTimePicker
+            // 
+            this.endDateTimePicker.Location = new System.Drawing.Point(183, 376);
+            this.endDateTimePicker.Name = "endDateTimePicker";
+            this.endDateTimePicker.Size = new System.Drawing.Size(165, 27);
+            this.endDateTimePicker.TabIndex = 5;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -127,6 +127,7 @@
             this.Controls.Add(this.selectButton);
             this.Name = "Report";
             this.Text = "Отчет";
+            this.Load += new System.EventHandler(this.Report_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
