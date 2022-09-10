@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "staff schedule", "staff schedule\staff schedule.csproj", "{2B2843FD-0BB4-4A4C-ABCD-16F8AEEB86D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "paycheck", "paycheck\paycheck.csproj", "{ECF6E19C-41BA-47F0-976A-9E82A4D67699}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "paycheck", "paycheck\paycheck.csproj", "{ECF6E19C-41BA-47F0-976A-9E82A4D67699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "report", "report\report.csproj", "{7DBE2C33-EB4B-465B-808A-FDEFC3F67C62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{ECF6E19C-41BA-47F0-976A-9E82A4D67699}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECF6E19C-41BA-47F0-976A-9E82A4D67699}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECF6E19C-41BA-47F0-976A-9E82A4D67699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBE2C33-EB4B-465B-808A-FDEFC3F67C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBE2C33-EB4B-465B-808A-FDEFC3F67C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBE2C33-EB4B-465B-808A-FDEFC3F67C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBE2C33-EB4B-465B-808A-FDEFC3F67C62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
