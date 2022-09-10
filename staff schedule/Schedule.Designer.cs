@@ -45,38 +45,43 @@
             // unitComboBox
             // 
             this.unitComboBox.FormattingEnabled = true;
-            this.unitComboBox.Location = new System.Drawing.Point(12, 371);
+            this.unitComboBox.Location = new System.Drawing.Point(14, 520);
+            this.unitComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.unitComboBox.Name = "unitComboBox";
-            this.unitComboBox.Size = new System.Drawing.Size(121, 23);
+            this.unitComboBox.Size = new System.Drawing.Size(138, 28);
             this.unitComboBox.TabIndex = 3;
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(12, 284);
+            this.dateTimePicker.Location = new System.Drawing.Point(14, 414);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(121, 23);
+            this.dateTimePicker.Size = new System.Drawing.Size(138, 27);
             this.dateTimePicker.TabIndex = 4;
             // 
             // postComboBox
             // 
             this.postComboBox.FormattingEnabled = true;
-            this.postComboBox.Location = new System.Drawing.Point(12, 342);
+            this.postComboBox.Location = new System.Drawing.Point(14, 484);
+            this.postComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.postComboBox.Name = "postComboBox";
-            this.postComboBox.Size = new System.Drawing.Size(121, 23);
+            this.postComboBox.Size = new System.Drawing.Size(138, 28);
             this.postComboBox.TabIndex = 5;
             // 
             // textBox
             // 
-            this.textBox.Location = new System.Drawing.Point(12, 313);
+            this.textBox.Location = new System.Drawing.Point(14, 449);
+            this.textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(121, 23);
+            this.textBox.Size = new System.Drawing.Size(138, 27);
             this.textBox.TabIndex = 6;
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(12, 400);
+            this.button.Location = new System.Drawing.Point(14, 556);
+            this.button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(75, 23);
+            this.button.Size = new System.Drawing.Size(86, 31);
             this.button.TabIndex = 7;
             this.button.Text = "Добавить";
             this.button.UseVisualStyleBackColor = true;
@@ -85,17 +90,17 @@
             // connectionLabel
             // 
             this.connectionLabel.AutoSize = true;
-            this.connectionLabel.Location = new System.Drawing.Point(12, 9);
+            this.connectionLabel.Location = new System.Drawing.Point(14, 9);
             this.connectionLabel.Name = "connectionLabel";
-            this.connectionLabel.Size = new System.Drawing.Size(0, 15);
+            this.connectionLabel.Size = new System.Drawing.Size(0, 20);
             this.connectionLabel.TabIndex = 8;
             // 
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(95, 404);
+            this.stateLabel.Location = new System.Drawing.Point(109, 539);
             this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(0, 15);
+            this.stateLabel.Size = new System.Drawing.Size(0, 20);
             this.stateLabel.TabIndex = 9;
             // 
             // listView
@@ -106,9 +111,10 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listView.GridLines = true;
-            this.listView.Location = new System.Drawing.Point(12, 12);
+            this.listView.Location = new System.Drawing.Point(14, 53);
+            this.listView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(776, 266);
+            this.listView.Size = new System.Drawing.Size(886, 353);
             this.listView.TabIndex = 10;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -131,9 +137,9 @@
             // 
             // Schedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.stateLabel);
             this.Controls.Add(this.connectionLabel);
@@ -142,6 +148,7 @@
             this.Controls.Add(this.postComboBox);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.unitComboBox);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Schedule";
             this.Text = "Штатное расписание";
             this.Load += new System.EventHandler(this.Schedule_Load);
