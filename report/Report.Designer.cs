@@ -48,6 +48,7 @@
             this.selectButton.TabIndex = 0;
             this.selectButton.Text = "Выбрать";
             this.selectButton.UseVisualStyleBackColor = true;
+            this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
             // stateLabel
             // 
@@ -82,18 +83,18 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Должность";
+            this.columnHeader1.Text = "Отдел";
             this.columnHeader1.Width = 200;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "С";
-            this.columnHeader2.Width = 80;
+            this.columnHeader2.Width = 95;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "По";
-            this.columnHeader3.Width = 80;
+            this.columnHeader3.Width = 95;
             // 
             // columnHeader4
             // 
@@ -102,6 +103,8 @@
             // 
             // startDateTimePicker
             // 
+            this.startDateTimePicker.CustomFormat = "dd.MM.yyyy";
+            this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.startDateTimePicker.Location = new System.Drawing.Point(12, 376);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(165, 27);
@@ -109,6 +112,8 @@
             // 
             // endDateTimePicker
             // 
+            this.endDateTimePicker.CustomFormat = "dd.MM.yyyy";
+            this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.endDateTimePicker.Location = new System.Drawing.Point(183, 376);
             this.endDateTimePicker.Name = "endDateTimePicker";
             this.endDateTimePicker.Size = new System.Drawing.Size(165, 27);

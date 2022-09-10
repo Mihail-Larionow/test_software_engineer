@@ -11,6 +11,7 @@ namespace report
         {
             InitializeComponent();
         }
+
         private void ShowGrid()
         {
             listView.Items.Clear();
@@ -19,17 +20,17 @@ namespace report
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("SELECT Должность, Дата, Ставка FROM Paycheck", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND Paycheck.Дата = Schedule.Дата", sqlConnection);
                 sqlDataReader = sqlCommand.ExecuteReader();
-
+               
                 ListViewItem item = null;
 
                 while (sqlDataReader.Read())
                 {
-                    item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Должность"]),
+                    item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Подразделение"]),
                         Convert.ToString(sqlDataReader["Дата"]),
                         Convert.ToString(sqlDataReader["Дата"]),
-                        Convert.ToString(sqlDataReader["Ставка"]) });
+                        Convert.ToString(Convert.ToInt32(sqlDataReader["Ставка"]) * Convert.ToInt32(sqlDataReader["Количество"])) });
 
                     listView.Items.Add(item);
                 }
@@ -55,6 +56,42 @@ namespace report
             else connectionLabel.Text = "Подключение не установлено";
 
             ShowGrid(); //Выводим таблицу
+        }
+
+        private void selectButton_Click(object sender, EventArgs e)
+        {
+            listView.Items.Clear();
+
+            SqlDataReader sqlDataReader = null;
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand($"SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND Paycheck.Дата = Schedule.Дата AND Paycheck.Дата BETWEEN '{startDateTimePicker.Text}' AND '{endDateTimePicker.Text}'", sqlConnection);
+                stateLabel.Text = "Выбрано строк: " + sqlCommand.ExecuteNonQuery();
+                sqlDataReader = sqlCommand.ExecuteReader();
+
+                ListViewItem item = null;
+
+                while (sqlDataReader.Read())
+                {
+                    item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Подразделение"]),
+                        Convert.ToString(sqlDataReader["Дата"]),
+                        Convert.ToString(endDateTimePicker.Text),
+                        Convert.ToString(Convert.ToInt32(sqlDataReader["Ставка"]) * Convert.ToInt32(sqlDataReader["Количество"])) });
+
+                    listView.Items.Add(item);
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
+            }
+
+            
         }
     }
 }

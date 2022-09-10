@@ -21,7 +21,7 @@ namespace paycheck
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("SELECT Должность, Дата, Ставка FROM Paycheck", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Paycheck", sqlConnection);
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 ListViewItem item = null;

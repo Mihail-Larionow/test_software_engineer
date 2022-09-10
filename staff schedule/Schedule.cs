@@ -20,7 +20,7 @@ namespace staff_schedule
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("SELECT Подразделение, Должность, Дата, Количество FROM Schedule", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Schedule", sqlConnection);
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 ListViewItem item = null;
