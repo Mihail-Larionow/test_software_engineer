@@ -38,11 +38,13 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.infoLabel1 = new System.Windows.Forms.Label();
+            this.infoLabel2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(12, 409);
+            this.selectButton.Location = new System.Drawing.Point(12, 462);
             this.selectButton.Name = "selectButton";
             this.selectButton.Size = new System.Drawing.Size(94, 29);
             this.selectButton.TabIndex = 0;
@@ -53,7 +55,7 @@
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(127, 413);
+            this.stateLabel.Location = new System.Drawing.Point(122, 471);
             this.stateLabel.Name = "stateLabel";
             this.stateLabel.Size = new System.Drawing.Size(0, 20);
             this.stateLabel.TabIndex = 1;
@@ -105,7 +107,7 @@
             // 
             this.startDateTimePicker.CustomFormat = "dd.MM.yyyy";
             this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateTimePicker.Location = new System.Drawing.Point(12, 376);
+            this.startDateTimePicker.Location = new System.Drawing.Point(12, 429);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(165, 27);
             this.startDateTimePicker.TabIndex = 4;
@@ -114,16 +116,36 @@
             // 
             this.endDateTimePicker.CustomFormat = "dd.MM.yyyy";
             this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDateTimePicker.Location = new System.Drawing.Point(183, 376);
+            this.endDateTimePicker.Location = new System.Drawing.Point(183, 429);
             this.endDateTimePicker.Name = "endDateTimePicker";
             this.endDateTimePicker.Size = new System.Drawing.Size(165, 27);
             this.endDateTimePicker.TabIndex = 5;
+            // 
+            // infoLabel1
+            // 
+            this.infoLabel1.AutoSize = true;
+            this.infoLabel1.Location = new System.Drawing.Point(12, 406);
+            this.infoLabel1.Name = "infoLabel1";
+            this.infoLabel1.Size = new System.Drawing.Size(18, 20);
+            this.infoLabel1.TabIndex = 6;
+            this.infoLabel1.Text = "С";
+            // 
+            // infoLabel2
+            // 
+            this.infoLabel2.AutoSize = true;
+            this.infoLabel2.Location = new System.Drawing.Point(183, 406);
+            this.infoLabel2.Name = "infoLabel2";
+            this.infoLabel2.Size = new System.Drawing.Size(29, 20);
+            this.infoLabel2.TabIndex = 7;
+            this.infoLabel2.Text = "По";
             // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 503);
+            this.Controls.Add(this.infoLabel2);
+            this.Controls.Add(this.infoLabel1);
             this.Controls.Add(this.endDateTimePicker);
             this.Controls.Add(this.startDateTimePicker);
             this.Controls.Add(this.listView);
@@ -150,5 +172,7 @@
         private ColumnHeader columnHeader4;
         private DateTimePicker startDateTimePicker;
         private DateTimePicker endDateTimePicker;
+        private Label infoLabel1;
+        private Label infoLabel2;
     }
 }

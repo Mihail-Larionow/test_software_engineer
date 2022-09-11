@@ -25,8 +25,11 @@ namespace report
 
             try
             {
+                String command = $"SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество " +
+                                 $"FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND " +
+                                 $"Paycheck.Дата = Schedule.Дата AND Paycheck.Дата BETWEEN'{startTime}' AND '{endTime}'";
                 //SQL запрос
-                SqlCommand sqlCommand = new SqlCommand($"SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND Paycheck.Дата = Schedule.Дата AND Paycheck.Дата BETWEEN'{startTime}' AND '{endTime}'", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 //Чтение ответа на SQL запрос
                 sqlDataReader = sqlCommand.ExecuteReader();
                

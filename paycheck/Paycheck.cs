@@ -13,6 +13,7 @@ namespace paycheck
             InitializeComponent();
         }
 
+        //Вывод таблицы данных
         private void ShowGrid()
         {
             listView.Items.Clear();
@@ -45,6 +46,19 @@ namespace paycheck
             }
         }
 
+        //Добавление строки
+        private void AddRow()
+        {
+            String command = $"INSERT INTO [Paycheck] (Должность, Дата, Ставка) " +
+                             $"VALUES (N'{postСomboBox.Text}', '{dateTimePicker.Value.ToString("MM/dd/yyyy")}'," +
+                             $" '{numericUpDown.Value}')";
+            SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+
+            stateLabel.ForeColor = Color.Black;
+            stateLabel.Text = "Строк добавлено: " + sqlCommand.ExecuteNonQuery().ToString(); //Вывод количества добавленных строк
+        }
+
+        //Заполнение comboBox информацией из таблицы
         private void FillComboBox(ComboBox comboBox, String col)
         {
 
@@ -52,7 +66,8 @@ namespace paycheck
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand($"SELECT DISTINCT {col} FROM Paycheck", sqlConnection);
+                String command = $"SELECT DISTINCT {col} FROM Paycheck";
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 while (sqlDataReader.Read())
@@ -68,6 +83,13 @@ namespace paycheck
             {
                 if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
             }
+        }
+
+        //Проверка ошибок
+        private bool allIsGood()
+        {
+            if (numericUpDown.Value != 0 && postСomboBox.Text != "") return true;
+            return false;
         }
 
         private void Paycheck_Load(object sender, EventArgs e)
@@ -86,11 +108,16 @@ namespace paycheck
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand(
-                $"INSERT INTO [Paycheck] (Должность, Дата, Ставка) VALUES (N'{postСomboBox.Text}', '{dateTimePicker.Value.ToString("MM/dd/yyyy")}', '{textBox.Text}')", sqlConnection);
-            stateLabel.Text = "Строк обработано: " + command.ExecuteNonQuery().ToString();
-
-            ShowGrid();
+            if (allIsGood())
+            {
+                AddRow(); //Добавляем строку
+                ShowGrid(); //Выводим таблицу
+            }
+            else
+            {
+                stateLabel.ForeColor = Color.Red;
+                stateLabel.Text = "Ошибка!"; //Вывод сообщения об ошибке
+            }
         }
     }
 }
