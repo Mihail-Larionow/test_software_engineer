@@ -80,7 +80,7 @@
             this.listView.Location = new System.Drawing.Point(10, 28);
             this.listView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(653, 251);
+            this.listView.Size = new System.Drawing.Size(653, 261);
             this.listView.TabIndex = 3;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;

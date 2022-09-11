@@ -53,20 +53,18 @@
             // 
             this.unitComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitComboBox.FormattingEnabled = true;
-            this.unitComboBox.Location = new System.Drawing.Point(18, 168);
-            this.unitComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.unitComboBox.Location = new System.Drawing.Point(16, 126);
             this.unitComboBox.Name = "unitComboBox";
-            this.unitComboBox.Size = new System.Drawing.Size(197, 28);
+            this.unitComboBox.Size = new System.Drawing.Size(173, 23);
             this.unitComboBox.TabIndex = 3;
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.CustomFormat = "dd.MM.yyyy";
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(18, 47);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker.Location = new System.Drawing.Point(16, 35);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(149, 27);
+            this.dateTimePicker.Size = new System.Drawing.Size(131, 23);
             this.dateTimePicker.TabIndex = 4;
             // 
             // postComboBox
@@ -74,18 +72,16 @@
             this.postComboBox.BackColor = System.Drawing.SystemColors.Window;
             this.postComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.postComboBox.FormattingEnabled = true;
-            this.postComboBox.Location = new System.Drawing.Point(18, 112);
-            this.postComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.postComboBox.Location = new System.Drawing.Point(16, 84);
             this.postComboBox.Name = "postComboBox";
-            this.postComboBox.Size = new System.Drawing.Size(197, 28);
+            this.postComboBox.Size = new System.Drawing.Size(173, 23);
             this.postComboBox.TabIndex = 5;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(250, 223);
-            this.addButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addButton.Location = new System.Drawing.Point(219, 167);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(114, 27);
+            this.addButton.Size = new System.Drawing.Size(100, 23);
             this.addButton.TabIndex = 7;
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
@@ -94,17 +90,17 @@
             // connectionLabel
             // 
             this.connectionLabel.AutoSize = true;
-            this.connectionLabel.Location = new System.Drawing.Point(14, 9);
+            this.connectionLabel.Location = new System.Drawing.Point(12, 7);
             this.connectionLabel.Name = "connectionLabel";
-            this.connectionLabel.Size = new System.Drawing.Size(0, 20);
+            this.connectionLabel.Size = new System.Drawing.Size(0, 15);
             this.connectionLabel.TabIndex = 8;
             // 
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(415, 593);
+            this.stateLabel.Location = new System.Drawing.Point(363, 445);
             this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(0, 20);
+            this.stateLabel.Size = new System.Drawing.Size(0, 15);
             this.stateLabel.TabIndex = 9;
             // 
             // listView
@@ -115,10 +111,9 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listView.GridLines = true;
-            this.listView.Location = new System.Drawing.Point(14, 33);
-            this.listView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listView.Location = new System.Drawing.Point(12, 25);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(886, 323);
+            this.listView.Size = new System.Drawing.Size(776, 243);
             this.listView.TabIndex = 10;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -146,27 +141,27 @@
             // infoLabel1
             // 
             this.infoLabel1.AutoSize = true;
-            this.infoLabel1.Location = new System.Drawing.Point(18, 23);
+            this.infoLabel1.Location = new System.Drawing.Point(16, 17);
             this.infoLabel1.Name = "infoLabel1";
-            this.infoLabel1.Size = new System.Drawing.Size(241, 20);
+            this.infoLabel1.Size = new System.Drawing.Size(190, 15);
             this.infoLabel1.TabIndex = 11;
             this.infoLabel1.Text = "Дата начала действия должности";
             // 
             // infoLabel2
             // 
             this.infoLabel2.AutoSize = true;
-            this.infoLabel2.Location = new System.Drawing.Point(18, 88);
+            this.infoLabel2.Location = new System.Drawing.Point(16, 66);
             this.infoLabel2.Name = "infoLabel2";
-            this.infoLabel2.Size = new System.Drawing.Size(86, 20);
+            this.infoLabel2.Size = new System.Drawing.Size(69, 15);
             this.infoLabel2.TabIndex = 12;
             this.infoLabel2.Text = "Должность";
             // 
             // infoLabel3
             // 
             this.infoLabel3.AutoSize = true;
-            this.infoLabel3.Location = new System.Drawing.Point(18, 144);
+            this.infoLabel3.Location = new System.Drawing.Point(16, 108);
             this.infoLabel3.Name = "infoLabel3";
-            this.infoLabel3.Size = new System.Drawing.Size(50, 20);
+            this.infoLabel3.Size = new System.Drawing.Size(40, 15);
             this.infoLabel3.TabIndex = 13;
             this.infoLabel3.Text = "Отдел";
             // 
@@ -182,43 +177,45 @@
             this.groupBox.Controls.Add(this.postComboBox);
             this.groupBox.Controls.Add(this.unitComboBox);
             this.groupBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox.Location = new System.Drawing.Point(14, 363);
+            this.groupBox.Location = new System.Drawing.Point(12, 272);
+            this.groupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(385, 272);
+            this.groupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox.Size = new System.Drawing.Size(337, 204);
             this.groupBox.TabIndex = 14;
             this.groupBox.TabStop = false;
             // 
             // numericUpDown
             // 
-            this.numericUpDown.Location = new System.Drawing.Point(18, 223);
+            this.numericUpDown.Location = new System.Drawing.Point(16, 167);
+            this.numericUpDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(149, 27);
+            this.numericUpDown.Size = new System.Drawing.Size(130, 23);
             this.numericUpDown.TabIndex = 15;
             // 
             // infoLabel4
             // 
             this.infoLabel4.AutoSize = true;
-            this.infoLabel4.Location = new System.Drawing.Point(18, 200);
+            this.infoLabel4.Location = new System.Drawing.Point(16, 150);
             this.infoLabel4.Name = "infoLabel4";
-            this.infoLabel4.Size = new System.Drawing.Size(90, 20);
+            this.infoLabel4.Size = new System.Drawing.Size(72, 15);
             this.infoLabel4.TabIndex = 14;
             this.infoLabel4.Text = "Количество";
             // 
             // Schedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 647);
+            this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.stateLabel);
             this.Controls.Add(this.connectionLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Schedule";
             this.Text = "Штатное расписание";
             this.Load += new System.EventHandler(this.Schedule_Load);

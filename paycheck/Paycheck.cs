@@ -35,7 +35,7 @@ namespace paycheck
                 {
                     //Добавляем строку в ListView как item
                     item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Должность"]),
-                        Convert.ToString(sqlDataReader["Дата"]),
+                        Convert.ToDateTime(sqlDataReader["Дата"]).ToString("dd.MM.yyyy"),
                         Convert.ToString(sqlDataReader["Ставка"]) });
 
                     listView.Items.Add(item);

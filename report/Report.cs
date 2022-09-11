@@ -44,8 +44,8 @@ namespace report
                     if (lastTime > endDateTimePicker.Value) lastTime = endDateTimePicker.Value; //Дата конца срока или конец промежутка
                     //Добавляем строку в ListView как item
                     item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Подразделение"]),
-                        Convert.ToString(firstTime),
-                        Convert.ToString(lastTime),
+                        firstTime.ToString("dd.MM.yyyy"),
+                        lastTime.ToString("dd.MM.yyyy"),
                         Convert.ToString(Convert.ToInt32(sqlDataReader["Ставка"]) * Convert.ToInt32(sqlDataReader["Количество"])) });
 
                     listView.Items.Add(item);
