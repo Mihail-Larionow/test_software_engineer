@@ -1,35 +1,46 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace report
 {
     public partial class Report : Form
     {
-        private SqlConnection sqlConnection = null;
+        private SqlConnection sqlConnection = null; //Инициализация подключения к базе данных
         public Report()
         {
             InitializeComponent();
         }
 
+        //Вывод таблицы данных в границах времени
         private void ShowGrid()
         {
             listView.Items.Clear();
+
+            String startTime = startDateTimePicker.Value.ToString("MM-dd-yyyy"); //Инициализация даты начала промежутка
+            String endTime = endDateTimePicker.Value.ToString("MM-dd-yyyy"); //Инициализация даты конца промежутка
 
             SqlDataReader sqlDataReader = null;
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND Paycheck.Дата = Schedule.Дата", sqlConnection);
+                //SQL запрос
+                SqlCommand sqlCommand = new SqlCommand($"SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND Paycheck.Дата = Schedule.Дата AND Paycheck.Дата BETWEEN'{startTime}' AND '{endTime}'", sqlConnection);
+                //Чтение ответа на SQL запрос
                 sqlDataReader = sqlCommand.ExecuteReader();
                
                 ListViewItem item = null;
 
+                //Добавление строк в ListView
                 while (sqlDataReader.Read())
                 {
+                    DateTime lastTime = Convert.ToDateTime(sqlDataReader["Дата"]).AddMonths(5); //Добавление срока работы отдела
+                    if (lastTime > endDateTimePicker.Value) lastTime = endDateTimePicker.Value; //Дата конца срока или конец промежутка
+                    //Добавляем строку в ListView как item
                     item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Подразделение"]),
                         Convert.ToString(sqlDataReader["Дата"]),
-                        Convert.ToString(sqlDataReader["Дата"]),
+                        Convert.ToString(lastTime),
                         Convert.ToString(Convert.ToInt32(sqlDataReader["Ставка"]) * Convert.ToInt32(sqlDataReader["Количество"])) });
 
                     listView.Items.Add(item);
@@ -41,57 +52,37 @@ namespace report
             }
             finally
             {
-                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
+                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close(); //Закрываем sqlDataReader
             }
         }
 
         private void Report_Load(object sender, EventArgs e)
         {
+            startDateTimePicker.Text = "26-11-2001"; //Инициализация начальной даты
+
+            connectionLabel.ForeColor = Color.Yellow; 
             connectionLabel.Text = "Идёт подключение к базе данных";
 
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Database"].ConnectionString); //Подключаем базу данных
             sqlConnection.Open(); //Открываем подключение
 
-            if (sqlConnection.State == ConnectionState.Open) connectionLabel.Text = "Подключение установлено";
-            else connectionLabel.Text = "Подключение не установлено";
+            if (sqlConnection.State == ConnectionState.Open)
+            {
+                connectionLabel.Text = "Подключение установлено";
+                connectionLabel.ForeColor = Color.Green;
+            }
+            else
+            {
+                connectionLabel.Text = "Подключение не установлено";
+                connectionLabel.ForeColor = Color.Red;
+            }
 
-            ShowGrid(); //Выводим таблицу
+                ShowGrid(); //Выводим таблицу
         }
 
         private void selectButton_Click(object sender, EventArgs e)
         {
-            listView.Items.Clear();
-
-            SqlDataReader sqlDataReader = null;
-
-            try
-            {
-                SqlCommand sqlCommand = new SqlCommand($"SELECT Schedule.Подразделение, Paycheck.Дата, Paycheck.Ставка, Schedule.Количество FROM Paycheck, Schedule WHERE Paycheck.Должность = Schedule.Должность AND Paycheck.Дата = Schedule.Дата AND Paycheck.Дата BETWEEN '{startDateTimePicker.Text}' AND '{endDateTimePicker.Text}'", sqlConnection);
-                stateLabel.Text = "Выбрано строк: " + sqlCommand.ExecuteNonQuery();
-                sqlDataReader = sqlCommand.ExecuteReader();
-
-                ListViewItem item = null;
-
-                while (sqlDataReader.Read())
-                {
-                    item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Подразделение"]),
-                        Convert.ToString(sqlDataReader["Дата"]),
-                        Convert.ToString(endDateTimePicker.Text),
-                        Convert.ToString(Convert.ToInt32(sqlDataReader["Ставка"]) * Convert.ToInt32(sqlDataReader["Количество"])) });
-
-                    listView.Items.Add(item);
-                }
-            }
-            catch
-            {
-
-            }
-            finally
-            {
-                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
-            }
-
-            
+            ShowGrid();
         }
     }
 }
