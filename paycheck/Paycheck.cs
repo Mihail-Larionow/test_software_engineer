@@ -81,7 +81,7 @@ namespace paycheck
             }
             finally
             {
-                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
+                if (sqlDataReader != null && numericUpDown.Value != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
             }
         }
 

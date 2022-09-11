@@ -88,7 +88,7 @@ namespace staff_schedule
         //Проверка ошибок
         private bool allIsGood()
         {
-            if (numericUpDown.Value != 0 && unitComboBox.Text != "" && postComboBox.Text != "") return true;
+            if (numericUpDown.Value != 0 && numericUpDown.Value != null && unitComboBox.Text != "" && postComboBox.Text != "") return true;
             return false;
         }
         private void Schedule_Load(object sender, EventArgs e)
