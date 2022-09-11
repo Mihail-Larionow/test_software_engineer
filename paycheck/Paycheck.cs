@@ -22,13 +22,18 @@ namespace paycheck
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Paycheck", sqlConnection);
+                String command = "SELECT * FROM Paycheck";
+                //SQL запрос
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                //Чтение ответа на SQL запрос
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 ListViewItem item = null;
 
+                //Добавление строк в ListView
                 while (sqlDataReader.Read())
                 {
+                    //Добавляем строку в ListView как item
                     item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Должность"]),
                         Convert.ToString(sqlDataReader["Дата"]),
                         Convert.ToString(sqlDataReader["Ставка"]) });
@@ -67,7 +72,9 @@ namespace paycheck
             try
             {
                 String command = $"SELECT DISTINCT {col} FROM Paycheck";
+                //SQL запрос
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                //Чтение ответа на SQL запрос
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 while (sqlDataReader.Read())
@@ -81,7 +88,7 @@ namespace paycheck
             }
             finally
             {
-                if (sqlDataReader != null && numericUpDown.Value != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
+                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
             }
         }
 

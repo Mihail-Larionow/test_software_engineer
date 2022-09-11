@@ -18,7 +18,7 @@ namespace report
         {
             listView.Items.Clear();
 
-            String startTime = startDateTimePicker.Value.ToString("MM-dd-yyyy"); //Инициализация даты начала промежутка
+            String startTime = startDateTimePicker.Value.AddMonths(-5).ToString("MM-dd-yyyy"); //Инициализация даты начала промежутка
             String endTime = endDateTimePicker.Value.ToString("MM-dd-yyyy"); //Инициализация даты конца промежутка
 
             SqlDataReader sqlDataReader = null;
@@ -38,11 +38,13 @@ namespace report
                 //Добавление строк в ListView
                 while (sqlDataReader.Read())
                 {
-                    DateTime lastTime = Convert.ToDateTime(sqlDataReader["Дата"]).AddMonths(5); //Добавление срока работы отдела
+                    DateTime firstTime = Convert.ToDateTime(sqlDataReader["Дата"]); //Инициализация начала срока работы отдела
+                    DateTime lastTime = Convert.ToDateTime(sqlDataReader["Дата"]).AddMonths(5); //Инициализация конца срока работы отдела
+                    if (firstTime < startDateTimePicker.Value) firstTime = startDateTimePicker.Value; //Дата начала срока или начало промежутка
                     if (lastTime > endDateTimePicker.Value) lastTime = endDateTimePicker.Value; //Дата конца срока или конец промежутка
                     //Добавляем строку в ListView как item
                     item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Подразделение"]),
-                        Convert.ToString(sqlDataReader["Дата"]),
+                        Convert.ToString(firstTime),
                         Convert.ToString(lastTime),
                         Convert.ToString(Convert.ToInt32(sqlDataReader["Ставка"]) * Convert.ToInt32(sqlDataReader["Количество"])) });
 

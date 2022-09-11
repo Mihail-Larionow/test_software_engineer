@@ -21,13 +21,18 @@ namespace staff_schedule
 
             try
             {
-                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Schedule", sqlConnection);
+                String command = "SELECT * FROM Schedule";
+                //SQL запрос
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                //Чтение ответа на SQL запрос
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 ListViewItem item = null;
 
+                //Добавление строк в ListView
                 while (sqlDataReader.Read())
                 {
+                    //Добавляем строку в ListView как item
                     item = new ListViewItem(new String[] {Convert.ToString(sqlDataReader["Подразделение"]),
                         Convert.ToString(sqlDataReader["Должность"]),
                         Convert.ToString(sqlDataReader["Дата"]),
@@ -67,7 +72,9 @@ namespace staff_schedule
             try
             {
                 String command = $"SELECT DISTINCT {col} FROM Schedule";
+                //SQL запрос
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                //Чтение ответа на SQL запрос
                 sqlDataReader = sqlCommand.ExecuteReader();
 
                 while (sqlDataReader.Read())
@@ -88,7 +95,7 @@ namespace staff_schedule
         //Проверка ошибок
         private bool allIsGood()
         {
-            if (numericUpDown.Value != 0 && numericUpDown.Value != null && unitComboBox.Text != "" && postComboBox.Text != "") return true;
+            if (numericUpDown.Value != 0 && unitComboBox.Text != "" && postComboBox.Text != "") return true;
             return false;
         }
         private void Schedule_Load(object sender, EventArgs e)

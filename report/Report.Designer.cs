@@ -44,9 +44,10 @@
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(12, 462);
+            this.selectButton.Location = new System.Drawing.Point(581, 322);
+            this.selectButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(94, 29);
+            this.selectButton.Size = new System.Drawing.Size(82, 23);
             this.selectButton.TabIndex = 0;
             this.selectButton.Text = "Выбрать";
             this.selectButton.UseVisualStyleBackColor = true;
@@ -55,17 +56,17 @@
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(122, 471);
+            this.stateLabel.Location = new System.Drawing.Point(107, 353);
             this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(0, 20);
+            this.stateLabel.Size = new System.Drawing.Size(0, 15);
             this.stateLabel.TabIndex = 1;
             // 
             // connectionLabel
             // 
             this.connectionLabel.AutoSize = true;
-            this.connectionLabel.Location = new System.Drawing.Point(15, 14);
+            this.connectionLabel.Location = new System.Drawing.Point(13, 10);
             this.connectionLabel.Name = "connectionLabel";
-            this.connectionLabel.Size = new System.Drawing.Size(0, 20);
+            this.connectionLabel.Size = new System.Drawing.Size(0, 15);
             this.connectionLabel.TabIndex = 2;
             // 
             // listView
@@ -76,9 +77,10 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listView.GridLines = true;
-            this.listView.Location = new System.Drawing.Point(12, 37);
+            this.listView.Location = new System.Drawing.Point(10, 28);
+            this.listView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(746, 333);
+            this.listView.Size = new System.Drawing.Size(653, 251);
             this.listView.TabIndex = 3;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -107,43 +109,45 @@
             // 
             this.startDateTimePicker.CustomFormat = "dd.MM.yyyy";
             this.startDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDateTimePicker.Location = new System.Drawing.Point(12, 429);
+            this.startDateTimePicker.Location = new System.Drawing.Point(10, 322);
+            this.startDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startDateTimePicker.Name = "startDateTimePicker";
-            this.startDateTimePicker.Size = new System.Drawing.Size(165, 27);
+            this.startDateTimePicker.Size = new System.Drawing.Size(145, 23);
             this.startDateTimePicker.TabIndex = 4;
             // 
             // endDateTimePicker
             // 
             this.endDateTimePicker.CustomFormat = "dd.MM.yyyy";
             this.endDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDateTimePicker.Location = new System.Drawing.Point(183, 429);
+            this.endDateTimePicker.Location = new System.Drawing.Point(160, 322);
+            this.endDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(165, 27);
+            this.endDateTimePicker.Size = new System.Drawing.Size(145, 23);
             this.endDateTimePicker.TabIndex = 5;
             // 
             // infoLabel1
             // 
             this.infoLabel1.AutoSize = true;
-            this.infoLabel1.Location = new System.Drawing.Point(12, 406);
+            this.infoLabel1.Location = new System.Drawing.Point(10, 304);
             this.infoLabel1.Name = "infoLabel1";
-            this.infoLabel1.Size = new System.Drawing.Size(18, 20);
+            this.infoLabel1.Size = new System.Drawing.Size(15, 15);
             this.infoLabel1.TabIndex = 6;
             this.infoLabel1.Text = "С";
             // 
             // infoLabel2
             // 
             this.infoLabel2.AutoSize = true;
-            this.infoLabel2.Location = new System.Drawing.Point(183, 406);
+            this.infoLabel2.Location = new System.Drawing.Point(160, 304);
             this.infoLabel2.Name = "infoLabel2";
-            this.infoLabel2.Size = new System.Drawing.Size(29, 20);
+            this.infoLabel2.Size = new System.Drawing.Size(23, 15);
             this.infoLabel2.TabIndex = 7;
             this.infoLabel2.Text = "По";
             // 
             // Report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 503);
+            this.ClientSize = new System.Drawing.Size(700, 361);
             this.Controls.Add(this.infoLabel2);
             this.Controls.Add(this.infoLabel1);
             this.Controls.Add(this.endDateTimePicker);
@@ -152,6 +156,7 @@
             this.Controls.Add(this.connectionLabel);
             this.Controls.Add(this.stateLabel);
             this.Controls.Add(this.selectButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Report";
             this.Text = "Отчет";
             this.Load += new System.EventHandler(this.Report_Load);
