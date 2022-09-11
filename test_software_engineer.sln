@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "staff schedule", "staff sch
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "paycheck", "paycheck\paycheck.csproj", "{ECF6E19C-41BA-47F0-976A-9E82A4D67699}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "report", "report\report.csproj", "{7DBE2C33-EB4B-465B-808A-FDEFC3F67C62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "report", "report\report.csproj", "{7DBE2C33-EB4B-465B-808A-FDEFC3F67C62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{39918BA8-ED4F-4922-A723-E7B0582159E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
