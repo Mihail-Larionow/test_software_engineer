@@ -47,7 +47,7 @@ namespace staff_schedule
             }
             finally
             {
-                if(sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
+                if(sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close(); //Закрываем sqlDataReader
             }
         }
 
@@ -93,9 +93,9 @@ namespace staff_schedule
         }
 
         //Проверка ошибок
-        private bool allIsGood()
+        static public bool allIsGood(decimal num, String firstText, String secondText)
         {
-            if (numericUpDown.Value != 0 && unitComboBox.Text != "" && postComboBox.Text != "") return true;
+            if (num != 0 && firstText != "" && secondText != "") return true;
             return false;
         }
         private void Schedule_Load(object sender, EventArgs e)
@@ -128,7 +128,7 @@ namespace staff_schedule
         //Добавление информации при нажатии
         private void button_Click(object sender, EventArgs e) 
         {
-            if (allIsGood())
+            if (allIsGood(numericUpDown.Value, unitComboBox.Text, postComboBox.Text))
             {
                 AddRow(); //Добавляем строку
                 ShowGrid(); //Выводим таблицу

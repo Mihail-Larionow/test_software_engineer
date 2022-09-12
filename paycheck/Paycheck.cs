@@ -47,7 +47,7 @@ namespace paycheck
             }
             finally
             {
-                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
+                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close(); //Закрываем sqlDataReader
             }
         }
 
@@ -88,14 +88,14 @@ namespace paycheck
             }
             finally
             {
-                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close();
+                if (sqlDataReader != null && !sqlDataReader.IsClosed) sqlDataReader.Close(); //Закрываем sqlDataReader
             }
         }
 
         //Проверка ошибок
-        private bool allIsGood()
+        static public bool allIsGood(decimal num, String text)
         {
-            if (numericUpDown.Value != 0 && postСomboBox.Text != "") return true;
+            if (num != 0 && text != "") return true;
             return false;
         }
 
@@ -115,7 +115,7 @@ namespace paycheck
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (allIsGood())
+            if (allIsGood(numericUpDown.Value, postСomboBox.Text))
             {
                 AddRow(); //Добавляем строку
                 ShowGrid(); //Выводим таблицу
