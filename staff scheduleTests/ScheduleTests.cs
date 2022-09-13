@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace staff_schedule.Tests
 {
-    //Тест
     [TestClass()]
     public class ScheduleTests
     {
